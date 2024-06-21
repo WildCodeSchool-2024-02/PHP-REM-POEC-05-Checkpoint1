@@ -12,19 +12,33 @@ main {
     font-family: 'Bilbo Swash Caps', cursive;
 }
 
-.whisky, .empty-whisky, .inkpen, .page {
+.whisky, .inkpen {
     filter: drop-shadow(15px 15px 5px var(--shadow));
 }
 
-.pages {
+.desk {
     display: flex;
-    width: auto;
-    flex-basis : 65%;
-    margin:1em;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.whisky-container, .inkpen-container {
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-container {
+    display: flex;
+    flex-basis: 70%;
+    justify-content: space-between;
 }
 
 .page {
-    height:65vh;
+    height: 65vh;
     padding: 3vw;
     width: 50%;
     background-blend-mode: multiply;
@@ -37,6 +51,51 @@ main {
 
 .rightpage {
     background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
-    border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
+    border-radius: 40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
+}
+
+/* Pour avoir une résolution > 1200px */
+@media (min-width: 1200px) {
+    .desk {
+        justify-content: space-between;
+    }
+
+    .whisky-container, .inkpen-container {
+        flex-basis: 15%;
+    }
+
+    .book-container {
+        flex-basis: 70%;
+    }
+}
+/* 1100px et 1200px, on ajoute ceci et display none pour cacher le stylo */
+@media (min-width: 1100px) and (max-width: 1199px) {
+    .inkpen-container {
+        display: none;
+    }
+}
+
+/* 1000px et 1100px */
+@media (min-width: 1000px) and (max-width: 1099px) {
+    .whisky {
+        display: none;
+    }
+    .empty-whisky {
+        display: block;
+        filter: drop-shadow(15px 15px 5px var(--shadow));
+    }
+}
+
+
+
+.empty-whisky {
+    display: none;
+}
+
+/* 800px et 1000px */
+@media (min-width: 800px) and (max-width: 1000px) {
+    .whisky-container {
+        display: none;
+    }
 }
