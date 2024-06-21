@@ -24,7 +24,7 @@ main {
 }
 
 .page {
-    height:65vh;
+    height:35vw;
     padding: 3vw;
     width: 50%;
     background-blend-mode: multiply;
@@ -33,10 +33,139 @@ main {
 .leftpage {
     background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius: 24px 40% 40% 24px/8px 8px 8px 8px;
+
+    & h1 {
+        margin: 0;
+        color: coral;
+    }
+
+    & p {
+        font-size: 16px;
+        font-family: 'Roboto Mono', monospace;
+        color: red;
+    }
 }
 
 .rightpage {
     background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
+}
+
+.desktop {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.empty-whisky {
+    display: none;
+}
+
+.whisky {
+    align-self: flex-start;
+}
+
+.inkpen {
+    align-self: flex-end;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    & th {
+        background-color: #cccccc;
+    }
+
+    & tbody tr:nth-child(even) {
+        background: coral;
+    }
+}
+
+.form {
+
+    & div {
+        display: flex;
+        flex-direction: column;
+
+        & label {
+            margin-top: 15px;
+        }
+
+        & input {
+            font-size: 20px;
+            font-weight: 500;
+            max-width: 500px;
+            height: 30px;
+        }
+    }
+
+    & button {
+        margin-top: 20px;
+        font-size: 20pt;
+        background: coral;
+        border: none;
+        padding: 6px 15px;
+        border-radius: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .desktop {
+        height: 100%;
+        justify-content: flex-start;
+    }
+
+    .inkpen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .desktop {
+        justify-content: center;
+    }
+
+    .whisky {
+        display: none;
+    }
+
+    .empty-whisky {
+        display: initial;
+        align-self: flex-start;
+        height: 23vh;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .pages {
+        flex-basis: 100%;
+    }
+
+    .page {
+        height: 42vw;
+    }
+
+    .empty-whisky {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pages {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .page {
+        height: 65vh;
+        width: 65vw;
+    }
 }
