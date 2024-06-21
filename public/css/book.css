@@ -40,3 +40,100 @@ main {
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
 }
+
+@media screen and (max-width: 799px){
+
+    .pages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pen {
+        display: none;
+    }
+    
+    .empty-whisky {
+        display: none;
+    }
+
+    .whisky {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 999px){
+    
+    .desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-around;
+    }
+    
+    .pen {
+        display: none;
+    }
+    
+    .empty-whisky {
+        display: none;
+    }
+
+    .whisky {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1099px){
+    
+    .desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-around;
+    }
+    
+    .pen {
+        display: none;
+    }
+    
+    .whisky {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px){
+    
+    .desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-around;
+    }
+    
+    .pen {
+        display: none;
+    }
+    
+    .empty-whisky {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+    .desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-around;
+    }
+
+    .pen {
+        align-self: flex-end;
+    }
+
+    .empty-whisky {
+        display: none;
+    }
+}
