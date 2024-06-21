@@ -9,18 +9,18 @@
     function _initIndex():array{
         $index = array();
         foreach(range('A','Z') as $i) {
-            $index[$i] = [];
+            $index[$i] = array();
         }
         return $index;
       }
 
     function indexLetters($bribes):array{
         $index = _initIndex();
+
         foreach($bribes as $bribe =>$info)
         {
             array_push($index[strtoupper(substr($info['name'], 0, 1))], array('id' => $info['id'],'name' => $info['name'], 'payment' =>$info['payment']));
-        }
-         
+        }         
         return $index;
 	}
 
@@ -46,7 +46,11 @@
         if (empty($payments['payment'])) {
             $errors[] = 'payment required.';
         }
-        if (!empty($payments['payment'])<=0) {
+        if(preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/", $_POST['name'])<1)
+        {
+            $errors[] = 'forbiden characters in name';
+        }
+        if (filter_var($payments['payment'], FILTER_VALIDATE_INT)<=0) {
             $errors[] = 'bribe should be higher than 0.';
         }
         if(strtoupper($payments['name'])==="ELIOTT NESS")
@@ -73,9 +77,9 @@
     /*  
         ========================================= Index control =========================
     */
-    if($_SERVER["REQUEST_METHOD"] === 'GET' && isset($_GET['L']))
+    if($_SERVER["REQUEST_METHOD"] === 'GET' && isset($_GET['letter']))
     {
-        $letter=trim(strtoupper($_GET['L']));
+        $letter=trim(strtoupper($_GET['letter']));
         if(!empty($letter)&&strlen($letter)==1 && preg_match('/[A-Z]/',$letter)>=1)
         {
             $bribes=$index[$letter];
@@ -110,7 +114,7 @@
     <section class="index">
         <?php foreach($index as $id => $brides): ?>
             <?php if(count($brides)>0):?>
-                <a href="book.php?L=<?= $id?>"> <?= $id ?></a>
+                <a href="book.php?letter=<?= $id?>"> <?= $id ?></a>
                 <?php else: ?>
                     <p><?= $id ?></p>
             <?php endif; ?>
@@ -145,8 +149,8 @@
             </div>
 
             <div class="page rightpage">
-                    <?php if(isset($_GET['L'])&& strlen($_GET['L'])==1) : ?>
-                        <h3><?= trim(mb_strtoupper($_GET['L'])) ?></h3>
+                    <?php if(isset($_GET['letter'])&& strlen($_GET['letter'])==1) : ?>
+                        <h3><?= trim(mb_strtoupper($_GET['letter'])) ?></h3>
                     <?php endif; ?>
                     <!-- TODO : Display bribes and total paiement -->
                 <table>
