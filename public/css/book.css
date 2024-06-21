@@ -16,6 +16,22 @@ main {
     filter: drop-shadow(15px 15px 5px var(--shadow));
 }
 
+.index
+{
+    flex-direction: row;
+    width: auto;
+    height:5rem;
+    background-color:var(--light);
+    justify-content: space-between;
+    text-align: justify;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.index a
+{
+    justify-content: space-between;
+    text-decoration: none;
+}
 .pages {
     display: flex;
     width: auto;
@@ -39,4 +55,167 @@ main {
     background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
+}
+.page table
+{
+    width: 100%;
+    text-align: right;
+}
+.page form
+{
+    display: grid;
+    grid-template-columns: 1fr; 
+    text-align: right;
+}
+.page form button
+{
+    grid-area: -1/-1;
+    border:none;
+    background:transparent;
+    font-size: larger;
+}
+.page form button:hover
+{
+    color:var(--error);
+}
+@media (width >1200px )
+{
+    .empty-whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+    
+    .desktop
+    {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .desktop .whisky
+    {
+        width:20rem;
+        height:20rem;
+    }
+    .pages
+    {
+        margin:0;
+    }
+}
+
+@media (width >1100px  ) and (width<1200px)
+{
+    .empty-whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+
+    .inkpen
+    {
+        visibility: hidden;
+        position: fixed;
+    }
+    .desktop
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop .whisky
+    {
+        width:15rem;
+        height:15rem;
+    }
+    .pages
+    {
+        margin:0;
+    }
+
+}
+
+@media (width >1000px  ) and (width<1100px)
+{
+    .whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+
+    .inkpen
+    {
+        visibility: hidden;
+        position: fixed;
+    }
+    .desktop
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop .empty-whisky
+    {
+        width:15rem;
+        height:15rem;
+    }
+    .pages
+    {
+        margin:0;
+    }
+
+}
+
+@media (width >800px  ) and (width<1000px)
+{
+    .whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+    .empty-whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+
+    .inkpen
+    {
+        visibility: hidden;
+        position: fixed;
+    }
+    .desktop
+    {
+        display: flex;
+        justify-content: center;
+    }
+    .pages
+    {
+        flex-basis: 80%;
+        margin:0px;
+    }
+}
+@media (width<800px)
+{
+    .pages{
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 100%;
+
+    }
+    .whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+    .empty-whisky
+    {
+        position: fixed;
+        visibility: hidden;
+    }
+
+    .inkpen
+    {
+        visibility: hidden;
+        position: fixed;
+    }
 }
