@@ -156,14 +156,14 @@
                         <?php foreach($bribes as $bribe => $info): ?>
                             <tr>
                                 <th><?= $info['name'] ?></th>
-                                <td><?= $info['payment'] ?></td>
+                                <td><?= $info['payment'] ?> $</td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                         <tr>
                         <th scope="row">Totals</th>
-                        <td><?= $totalPayment ?></td>
+                        <td><?= $totalPayment ?> $</td>
                         </tr>
                     </tfoot>
                 </table>
