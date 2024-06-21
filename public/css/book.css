@@ -18,6 +18,7 @@ main {
 
 .index
 {
+    display: flex;
     flex-direction: row;
     width: auto;
     height:5rem;
@@ -25,15 +26,18 @@ main {
     justify-content: space-between;
     text-align: justify;
     font-family: 'Roboto Mono', monospace;
+    padding: 0;
+    margin: 0;
 }
 
 .index a
 {
-    justify-content: space-between;
+    width:100%;
     text-decoration: none;
 }
 .index p
 {
+    width:100%;
     margin:0;
     padding: 0;
     display: inline;
@@ -62,10 +66,17 @@ main {
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
 }
+.rightpage h3
+{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
 .page table
 {
     width: 100%;
     text-align: right;
+    border-top: 1px solid var(--dark);
 }
 .page form
 {
@@ -83,6 +94,10 @@ main {
 .page form button:hover
 {
     color:var(--error);
+}
+.page tfoot td
+{
+    border-top: 1px solid var(--dark);
 }
 @media (width >1200px )
 {
@@ -168,7 +183,6 @@ main {
     {
         margin:0;
     }
-
 }
 
 @media (width >800px  ) and (width<1000px)
@@ -232,21 +246,26 @@ main {
 
     .index
     {
+        position : fixed;
+        right:0;
+        top: 98px;
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
-        text-align: justify;
-        font-family: 'Roboto Mono', monospace;
+        align-items: end;
+        height:90%;
+        width:6vw;
+        font-size:2rem;
+        overflow: scroll;
     }
-
     .index a
     {
-        justify-content: space-between;
-        text-decoration: none;
+        margin:0;
+        padding: 0;
     }
     .index p
     {
         margin:0;
         padding: 0;
-        display: inline;
     }
 }

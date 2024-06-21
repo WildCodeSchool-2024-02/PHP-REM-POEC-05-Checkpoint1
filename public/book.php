@@ -73,11 +73,12 @@
     /*  
         ========================================= Index control =========================
     */
-    if($_SERVER["REQUEST_METHOD"] === 'GET')
+    if($_SERVER["REQUEST_METHOD"] === 'GET' && isset($_GET['L']))
     {
-        if(!empty($_GET['L'])&&strlen($_GET['L'])==1)
+        $letter=trim(strtoupper($_GET['L']));
+        if(!empty($letter)&&strlen($letter)==1 && preg_match('/[A-Z]/',$letter)>=1)
         {
-            $bribes=$index[trim($_GET['L'])];
+            $bribes=$index[$letter];
             $payment=0;
             foreach($bribes as $bribe=>$info)            
             {
@@ -132,11 +133,11 @@
                 <!-- TODO : Form -->
                 <form action="" method="post">
                     <div>
-                        <label for="name">name :</label>
+                        <label for="name">Name :</label>
                         <input id="name" name="name" type="text">
                     </div>
                     <div>
-                        <label for="payment">payment :</label>
+                        <label for="payment">Payment :</label>
                         <input id="payment" name="payment" type="text">
                     </div>
                     <button>🖊</button>
@@ -144,7 +145,10 @@
             </div>
 
             <div class="page rightpage">
-                <!-- TODO : Display bribes and total paiement -->
+                    <?php if(isset($_GET['L'])&& strlen($_GET['L'])==1) : ?>
+                        <h3><?= trim(mb_strtoupper($_GET['L'])) ?></h3>
+                    <?php endif; ?>
+                    <!-- TODO : Display bribes and total paiement -->
                 <table>
                     <thead>
                         <tr>
@@ -162,7 +166,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                        <th scope="row">Totals</th>
+                        <th scope="row">Total</th>
                         <td><?= $totalPayment ?> $</td>
                         </tr>
                     </tfoot>
