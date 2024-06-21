@@ -31,7 +31,7 @@ main {
 }
 
 .leftpage {
-    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, #e9e2bb 5%, rgba(255,251,203,1) 18%);
     border-radius: 24px 40% 40% 24px/8px 8px 8px 8px;
 }
 
@@ -39,4 +39,136 @@ main {
     background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+    background-color: #a39e83;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.input-payement {
+    width: 30%;
+}
+
+button {
+    margin-top: 20px;
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #d4a744;
+    cursor: pointer;
+}
+.bold-important {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.alphabetical-index {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 15px;
+    background-color: #e9e2bb;
+    margin-bottom: 50px;
+}
+
+.alphabetical-index a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #d4a744;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.bd-top {
+    border-top: 5px solid #d4a744;
+}
+
+/* Styles pour les écrans de 1200^x ou moins */
+@media screen and (min-width: 1200px) {
+    
+    .empty-whisky {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .inkpen {
+        align-self: flex-end;
+    }
+}
+
+/* Style pour les écrans entre 1100px et 1200px */
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+    .inkpen,
+    .empty-whisky {
+        display: none;
+    }
+}
+
+/* Style pour les écrans entre 1000px et 1100px */
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+    .inkpen,
+    .whisky {
+        display: none;
+    }
+
+}
+
+/* Stle pour les écrans entre 800px et 1000px */
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    .whisky,
+    .empty-whisky,
+    .inkpen {
+        display: none;
+    }
+
+}
+
+/* Pour les écrans inférieur à 800px */
+@media screen and (max-width: 800px) {
+    .whisky,
+    .empty-whisky,
+    .inkpen {
+        display: none;
+    }
+
+    .pages {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .page {
+        width: 80%;
+    }
 }
