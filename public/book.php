@@ -13,22 +13,122 @@
 
 <main class="container">
 
-    <section class="desktop">
-        <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>
-        <img src="image/empty_whisky.png" alt="an empty whisky glass" class="empty-whisky"/>
+<!--Screenshot > 1200px -->
+<section class="container2">
+            <div class="articles">            
+                   <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>           
+                <article>
+                    <div class="pages">
+                        <div class="page leftpage">
+                            Add a bribe
+                              <!-- TODO : Form -->
+                        </div>
+                        <div class="page rightpage">
+                               <!-- TODO : Display bribes and total paiement -->
+                        </div>
+                    </div>
+                </article>
+                <article>
+                <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>
+              </article>
+            </div>
+        </section>
 
-        <div class="pages">
-            <div class="page leftpage">
+
+
+
+
+        
+<!--Screenshot entre 1100px et 1200px -->
+        <section class="container3">
+            <div class="articles">            
+                   <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>           
+                <article>
+                    <div class="pages">
+                        <div class="page leftpage">
+                            Add a bribe
+                              <!-- TODO : Form -->
+                        </div>
+                        <div class="page rightpage">
+                               <!-- TODO : Display bribes and total paiement -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+<!--Screenshot entre 1000px et 1100px -->
+<section class="container4">
+            <div class="articles">            
+            <img src="image/empty_whisky.png" alt="an empty whisky glass" class="empty-whisky"/> 
+                <article>
+                    <div class="pages">
+                        <div class="page leftpage">
+                            Add a bribe
+                              <!-- TODO : Form -->
+                        </div>
+                        <div class="page rightpage">
+                               <!-- TODO : Display bribes and total paiement -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+<!--Screenshot entre 800px et 1000px -->
+<section class="container5">
+            <div class="articles">            
+                <article>
+                    <div class="pages">
+                        <div class="page leftpage">
+                            Add a bribe
+                              <!-- TODO : Form -->
+                        </div>
+                        <div class="page rightpage">
+                               <!-- TODO : Display bribes and total paiement -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+<!--Screenshot entre 800px et 1000px -->
+<section class="container5">
+            <div class="articles">            
+                <article>
+                    <div class="pages">
+                        <div class="page leftpage">
+                            Add a bribe
+                              <!-- TODO : Form -->
+                        </div>
+                        <div class="page rightpage">
+                               <!-- TODO : Display bribes and total paiement -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+
+
+        <section class="desktop">
+        <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>   
+        <img src="image/empty_whisky.png" alt="an empty whisky glass" class="empty-whisky"/> 
+
+        <div class="pages">  
+        <div class="page leftpage">
                 Add a bribe
                 <!-- TODO : Form -->
             </div>
 
             <div class="page rightpage">
                 <!-- TODO : Display bribes and total paiement -->
-            </div>
-        </div>
-        <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>
+            </div>  
     </section>
+  
+
+
 </main>
 </body>
 </html>

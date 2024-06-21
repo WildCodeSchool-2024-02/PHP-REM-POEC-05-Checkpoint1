@@ -40,3 +40,49 @@ main {
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
 }
+
+@media screen and (width > 1200px) {
+    
+    
+    .articles {
+        grid-template-rows: repeat(1fr, 8fr, 1fr);
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        display: inline-block;
+        align-items: center;
+        vertical-align: middle;
+        padding: 1rem;
+        background-color: var(--grey);
+        border-radius: 5px;
+    }
+    article img {
+        max-height: 150px;
+    }
+}
+@media screen and (1100px < width > 1200px) {
+    
+    
+    .articles {
+        grid-template-rows: repeat(1fr, 8fr, 1fr);
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        display: inline-block;
+        align-items: center;
+        vertical-align: middle;
+        padding: 1rem;
+        background-color: var(--grey);
+        border-radius: 5px;
+    }
+    article img {
+        max-height: 150px;
+    }
+}
+
+
+    
+
+    

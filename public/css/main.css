@@ -70,4 +70,13 @@ code {
 h3 {
     margin-top:3em;
 }
+.container2 {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 var(--spacing);
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
 
