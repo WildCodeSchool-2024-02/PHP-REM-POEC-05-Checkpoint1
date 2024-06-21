@@ -1,0 +1,144 @@
+/* book.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .desk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  
+  .whisky, .ink-pen {
+    width: 100px;
+    height: auto;
+  }
+  
+  .secret-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 2px solid #ccc;
+  }
+  
+  .left-page, .right-page {
+    width: 45%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #eee;
+  }
+  
+
+  /* book.css */
+.desk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .whisky {
+    order: 1;
+  }
+  
+  .secret-book {
+    order: 2;
+    display: flex;
+  }
+  
+  .ink-pen {
+    order: 3;
+  }
+  
+
+/* Utiliser flexbox pour aligner le verre de whisky à gauche, le stylo encre à droite et le livre secret au centre.*/
+
+/* Ajustement pour les résolutions >1200px */
+
+  @media (min-width: 1200px) {
+    .whisky {
+      margin-right: auto;
+    }
+    
+    .ink-pen {
+      margin-left: auto;
+    }
+  }
+
+/* Disparition du stylo entre 1100px et 1200px */
+
+@media (max-width: 1200px) and (min-width: 1100px) {
+    .ink-pen {
+      display: none;
+    }
+  }
+
+  
+  /* Changement du verre de whisky entre 1000px et 1100px */
+
+  @media (max-width: 1100px) and (min-width: 1000px) {
+    .whisky {
+      content: url('images/empty_whisky.png');
+    }
+  }
+
+  
+  /* Disparition du verre de whisky entre 800px et 1000px */
+
+  @media (max-width: 1000px) and (min-width: 800px) {
+    .whisky {
+      display: none;
+    }
+  }
+
+  
+  /* Réorganisation des pages du livre pour une résolution <800px */
+
+  @media (max-width: 800px) {
+    .secret-book {
+      flex-direction: column;
+    }
+  
+    .left-page,
+    .right-page {
+      width: 100%;
+    }
+  }
+
+  
