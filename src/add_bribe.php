@@ -1,5 +1,6 @@
 <?php
-require __DIR__ .'/../connec.php';
+require_once __DIR__ .'/../connec.php';
+
 $conn = new PDO(DSN, USER, PASS);
 
 
@@ -28,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
         if ($statement->execute()) {
          
-            header("Location: book.php");
+            header("Location: index.php");
             exit;
         } else {
             $errors[] = "Error when adding the bribe !";
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="name">Name</label>
         <input type="text" id="name" name="name" >
 
-        <label for="payment">Contenu</label>
+        <label for="payment">Payment</label>
         <input type="number" id="payment" name="payment" ></input>
 
 

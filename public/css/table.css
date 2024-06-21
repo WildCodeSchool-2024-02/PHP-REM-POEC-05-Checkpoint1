@@ -29,16 +29,16 @@ table tbody tr:nth-of-type(even) {
 }
 
 table tbody tr:last-of-type {
-    border-bottom: 2px solid #4a7970;
+    border-bottom: 2px solid #3c4d4a;
 }
 
 table tfoot tr {
-    background-color: #f3f3f3;
+    background-color: #78856b;
     font-weight: bold;
 }
 
 table tfoot td {
-    border-top: 2px solid #495f5b;
+    border-top: 2px solid #495f5b ;
     padding-top: 10px;
 }
 
