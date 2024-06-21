@@ -232,7 +232,7 @@ main {
 
     .index
     {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: space-between;
         text-align: justify;
         font-family: 'Roboto Mono', monospace;

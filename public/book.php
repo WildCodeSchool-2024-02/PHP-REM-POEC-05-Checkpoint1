@@ -25,7 +25,6 @@
 	}
 
     $connection = createConnection();
-    $connection = createConnection();
     $statement = $connection->query('SELECT * FROM bribe order by name');
     $all = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bribes=$all;
