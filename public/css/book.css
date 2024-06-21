@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap');
 
 body {
-    background-image: url('../image/background.jpeg');
+    background-image: url('http://localhost:8000/image/background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -14,6 +14,7 @@ main {
 
 .whisky, .empty-whisky, .inkpen, .page {
     filter: drop-shadow(15px 15px 5px var(--shadow));
+    height: fit-content;
 }
 
 .pages {
@@ -31,12 +32,63 @@ main {
 }
 
 .leftpage {
-    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    background: url('http://localhost:8000/image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius: 24px 40% 40% 24px/8px 8px 8px 8px;
 }
 
 .rightpage {
-    background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    background: url('http://localhost:8000/image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
     border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
 }
+
+.desktop {
+    display: flex;
+    justify-content: space-around;
+}
+.desktop .empty-whisky {
+    display: none;
+}
+.desktop .inkpen {
+    align-self: flex-end;
+}
+
+@media (max-width: 1200px) { 
+
+    .desktop .inkpen {
+        display: none;
+    }
+
+ }
+
+ @media (max-width: 1100px) { 
+
+    .desktop .whisky {
+        display: none;
+    }
+
+    .desktop .empty-whisky {
+        display: block;
+    }
+
+ }
+
+ @media (max-width: 1000px) { 
+
+    .desktop .empty-whisky {
+        display: none;
+    }
+    .desktop .pages {
+        flex-basis: 91%;
+    }
+
+ }
+
+ @media (max-width: 800px) { 
+
+    .desktop .pages {
+       flex-direction: column;
+       align-items: center;
+    }
+
+ }

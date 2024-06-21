@@ -20,12 +20,40 @@
 
         <div class="pages">
             <div class="page leftpage">
-                Add a bribe
-                <!-- TODO : Form -->
+             <a class="" href="/add">Ajouter une personne</a> 
+            
             </div>
 
             <div class="page rightpage">
-                <!-- TODO : Display bribes and total paiement -->
+
+            <?php if (isset($books)) : ?> 
+
+                <table>
+                <tbody>
+
+
+                <?php foreach($books as $book) :?>
+
+                    <tr>
+                    <td><?= $book["name"] ?></td>
+                    <td><?= $book["payment"] ?></td>
+                    </tr>
+
+                <?php endforeach; ?>
+                
+                </tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        Total : <?= $total_payment ?>
+                    </td>
+                </tr>
+                
+                </table>
+
+
+            <?php endif ?>
+
             </div>
         </div>
         <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>

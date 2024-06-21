@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ .'/../config.php';
+require_once __DIR__ .'/../src/routing.php';
+?>
+
+<!-- 
 <!doctype html>
 <html lang="en">
 <head>
@@ -183,4 +189,4 @@
     </section>
 </main>
 </body>
-</html>
+</html> -->
