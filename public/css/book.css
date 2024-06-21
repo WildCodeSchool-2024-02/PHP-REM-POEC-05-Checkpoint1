@@ -206,7 +206,12 @@ main {
         align-items: center;
         flex-direction: column;
         flex-basis: 100%;
-
+    }
+    .page
+    {
+        width:70vw;
+        margin:auto;
+        height:auto;
     }
     .whisky
     {
@@ -223,5 +228,25 @@ main {
     {
         visibility: hidden;
         position: fixed;
+    }
+
+    .index
+    {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        text-align: justify;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .index a
+    {
+        justify-content: space-between;
+        text-decoration: none;
+    }
+    .index p
+    {
+        margin:0;
+        padding: 0;
+        display: inline;
     }
 }
