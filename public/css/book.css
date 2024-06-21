@@ -32,6 +32,12 @@ main {
     justify-content: space-between;
     text-decoration: none;
 }
+.index p
+{
+    margin:0;
+    padding: 0;
+    display: inline;
+}
 .pages {
     display: flex;
     width: auto;

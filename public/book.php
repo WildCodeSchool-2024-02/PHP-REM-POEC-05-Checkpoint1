@@ -13,11 +13,9 @@
         }
         return $index;
       }
-    function indexLetters():array{
+
+    function indexLetters($bribes):array{
         $index = _initIndex();
-        $connection = createConnection();
-        $statement = $connection->query('SELECT * FROM bribe order by name');
-        $bribes = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach($bribes as $bribe =>$info)
         {
             array_push($index[strtoupper(substr($info['name'], 0, 1))], array('id' => $info['id'],'name' => $info['name'], 'payment' =>$info['payment']));
@@ -26,22 +24,19 @@
         return $index;
 	}
 
-    function firstLetterBribe($index):array{
-        foreach($index as $letter)
-        {
-            if(count($letter)>0)
-            {
-                return $letter;
-            }
-        }
-        return $index;
-    }
-
     $connection = createConnection();
+    $connection = createConnection();
+    $statement = $connection->query('SELECT * FROM bribe order by name');
+    $all = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $bribes=$all;
     $paymentStatement = $connection->query('SELECT SUM(payment) from bribe;');
     $totalPayment = $paymentStatement->fetch()[0];
-    $index = indexLetters();
-    $bribes = firstLetterBribe($index);
+    $index = indexLetters($all);
+
+
+    /*  
+        ========================================= FORM control =========================
+    */
     if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $payments = array_map('trim', $_POST);
     
@@ -55,7 +50,10 @@
         if (!empty($payments['payment'])<=0) {
             $errors[] = 'bribe should be higher than 0.';
         }
-    
+        if(strtoupper($payments['name'])==="ELIOTT NESS")
+        {
+            $errors[] ='This man is untouchable';
+        }
         // Save the recipe
         if (empty($errors)) {
             $connection = createConnection();
@@ -73,12 +71,14 @@
         }
     }
 
+    /*  
+        ========================================= Index control =========================
+    */
     if($_SERVER["REQUEST_METHOD"] === 'GET')
     {
         if(!empty($_GET['L'])&&strlen($_GET['L'])==1)
         {
             $bribes=$index[trim($_GET['L'])];
-            var_dump($bribes);
             $payment=0;
             foreach($bribes as $bribe=>$info)            
             {
@@ -86,6 +86,10 @@
             }
             $totalPayment=$payment;
         }
+    }
+    else
+    {
+        $bribes=$all;
     }
 ?>
 
@@ -105,7 +109,11 @@
 <main class="container">
     <section class="index">
         <?php foreach($index as $id => $brides): ?>
-            <a href="book.php?L=<?= $id?>"> <?= $id ?></a>
+            <?php if(count($brides)>0):?>
+                <a href="book.php?L=<?= $id?>"> <?= $id ?></a>
+                <?php else: ?>
+                    <p><?= $id ?></p>
+            <?php endif; ?>
         <?php endforeach; ?>
     </section>
     <section class="desktop">
@@ -160,6 +168,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                <a href="book.php">show All </a>
             </div>
         </div>
         <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>
