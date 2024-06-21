@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/book.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/form.css">
     <title>Checkpoint PHP 1</title>
 </head>
 <body>
@@ -21,10 +23,12 @@
             <div class="page leftpage">
                 Add a bribe
                 <!-- TODO : Form -->
+                <?php include '../src/add_bribe.php'; ?>
             </div>
 
             <div class="page rightpage">
                 <!-- TODO : Display bribes and total paiement -->
+                 <?php include '../src/display_bribes.php'; ?>
             </div>
         </div>
         <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>
