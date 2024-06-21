@@ -12,31 +12,140 @@ main {
     font-family: 'Bilbo Swash Caps', cursive;
 }
 
-.whisky, .empty-whisky, .inkpen, .page {
+.whisky,
+.empty-whisky,
+.inkpen,
+.page {
     filter: drop-shadow(15px 15px 5px var(--shadow));
 }
 
 .pages {
     display: flex;
     width: auto;
-    flex-basis : 65%;
-    margin:1em;
+    flex-basis: 65%;
+    margin: 1em;
 }
 
 .page {
-    height:65vh;
+    height: 65vh;
     padding: 3vw;
     width: 50%;
     background-blend-mode: multiply;
 }
 
 .leftpage {
-    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
+    background: url('../image/paper.png'), linear-gradient(270deg, rgba(157, 158, 137, 1) 0%, rgba(233, 226, 187, 1) 5%, rgba(255, 251, 203, 1) 18%);
     border-radius: 24px 40% 40% 24px/8px 8px 8px 8px;
 }
 
 .rightpage {
-    background: url('../image/paper.png'), linear-gradient(90deg, rgba(157,158,137,1) 0%, rgba(233,226,187,1) 5%, rgba(255,251,203,1) 18%);
-    border-radius:  40% 24px 24px 40%/8px 8px 8px 8px;
+    background: url('../image/paper.png'), linear-gradient(90deg, rgba(157, 158, 137, 1) 0%, rgba(233, 226, 187, 1) 5%, rgba(255, 251, 203, 1) 18%);
+    border-radius: 40% 24px 24px 40%/8px 8px 8px 8px;
     overflow: auto;
+}
+
+.pages {
+    width: 100%;
+}
+
+@media screen and (min-width:1200px) {
+    .desktop {
+        width: 100%;
+        display: flex;
+    }
+
+    .whisky {
+        width: 200px;
+        height: 200px;
+    }
+
+    .empty-whisky {
+        display: none;
+    }
+
+    .inkdiv {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .inkpen {
+        height: 600px;
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:1100px) and (max-width: 1199px) {
+    .desktop {
+        display: flex;
+    }
+
+    .whisky {
+        width: 300px;
+        height: 300px;
+    }
+
+    .empty-whisky {
+        display: none;
+    }
+
+    .inkdiv {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1000px) and (max-width: 1099px) {
+    .desktop {
+        display: flex;
+    }
+
+    .empty-whisky {
+        width: 300px;
+        height: 300px;
+    }
+
+    .whisky {
+        display: none;
+    }
+
+    .inkdiv {
+        display: none;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width: 999px) {
+    .empty-whisky {
+        display: none;
+    }
+
+    .whisky {
+        display: none;
+    }
+
+    .inkdiv {
+        display: none;
+    }
+}
+
+@media screen and (max-width:799px) {
+    .empty-whisky {
+        display: none;
+    }
+
+    .whisky {
+        display: none;
+    }
+
+    .inkdiv {
+        display: none;
+    }
+
+    .desktop {
+        width: 100%;
+    }
+    
+    .pages {
+        /* width: 150%; */
+        display: flex;
+        flex-direction: column;
+    }
 }
