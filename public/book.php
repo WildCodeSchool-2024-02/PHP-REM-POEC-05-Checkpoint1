@@ -79,7 +79,7 @@
     */
     if($_SERVER["REQUEST_METHOD"] === 'GET' && isset($_GET['letter']))
     {
-        $letter=trim(strtoupper($_GET['letter']));
+        $letter=htmlentities(trim(strtoupper($_GET['letter'])));
         if(!empty($letter)&&strlen($letter)==1 && preg_match('/[A-Z]/',$letter)>=1)
         {
             $bribes=$index[$letter];
