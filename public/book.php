@@ -38,7 +38,7 @@
     */
     if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $payments = array_map('trim', $_POST);
-    
+        $payments['payment']=filter_var($payments['payment'], FILTER_VALIDATE_INT);
         // Validate data
         if (empty($payments['name'])) {
             $errors[] = 'Name required.';
@@ -50,7 +50,7 @@
         {
             $errors[] = 'forbiden characters in name';
         }
-        if (filter_var($payments['payment'], FILTER_VALIDATE_INT)<=0) {
+        if ($payments['payment']<=0) {
             $errors[] = 'bribe should be higher than 0.';
         }
         if(strtoupper($payments['name'])==="ELIOTT NESS")

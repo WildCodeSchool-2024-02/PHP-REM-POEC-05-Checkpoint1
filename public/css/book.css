@@ -185,7 +185,7 @@ main {
     }
 }
 
-@media (width >800px  ) and (width<1000px)
+@media (width >800px  ) and (width<=1000px)
 {
     .whisky
     {
