@@ -2,7 +2,7 @@
 include '../connec.php';
 $connection = new PDO(DSN, USER, PASS);
 $errors = [];
-$letters=range('A','Z');
+$letters=range('A','Z'); //Va créer automatiquement un tableau avec les lettres de A à Z
 
 if ('POST' === $_SERVER['REQUEST_METHOD']) {
     //On trim (-retire les espaces des entrées de POST et on stocke dans datas)
