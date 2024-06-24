@@ -32,101 +32,74 @@
                 <img src="image/inkpen.png" alt="an ink pen" class="inkpen"/>
               </article>
             </div>
-        </section>
+</section>
+<section class="bribes">
+<h1>Bribes</h1>
+<?php
+
+//include("checkpoint1.sql");
 
 
 
 
 
-        
-<!--Screenshot entre 1100px et 1200px -->
-        <section class="container3">
-            <div class="articles">            
-                   <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>           
-                <article>
-                    <div class="pages">
-                        <div class="page leftpage">
-                            Add a bribe
-                              <!-- TODO : Form -->
-                        </div>
-                        <div class="page rightpage">
-                               <!-- TODO : Display bribes and total paiement -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+$host = "localhost";
+$username = "Ido";
+$password = "Eden2017+";
+$db = "checkpoint";
+$conn = new PDO("mysql:host=$host;dbname=$db", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-<!--Screenshot entre 1000px et 1100px -->
-<section class="container4">
-            <div class="articles">            
-            <img src="image/empty_whisky.png" alt="an empty whisky glass" class="empty-whisky"/> 
-                <article>
-                    <div class="pages">
-                        <div class="page leftpage">
-                            Add a bribe
-                              <!-- TODO : Form -->
-                        </div>
-                        <div class="page rightpage">
-                               <!-- TODO : Display bribes and total paiement -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+try {
 
-<!--Screenshot entre 800px et 1000px -->
-<section class="container5">
-            <div class="articles">            
-                <article>
-                    <div class="pages">
-                        <div class="page leftpage">
-                            Add a bribe
-                              <!-- TODO : Form -->
-                        </div>
-                        <div class="page rightpage">
-                               <!-- TODO : Display bribes and total paiement -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-<!--Screenshot entre 800px et 1000px -->
-<section class="container5">
-            <div class="articles">            
-                <article>
-                    <div class="pages">
-                        <div class="page leftpage">
-                            Add a bribe
-                              <!-- TODO : Form -->
-                        </div>
-                        <div class="page rightpage">
-                               <!-- TODO : Display bribes and total paiement -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-
-
-
-        <section class="desktop">
-        <img src="image/whisky.png" alt="a whisky glass" class="whisky"/>   
-        <img src="image/empty_whisky.png" alt="an empty whisky glass" class="empty-whisky"/> 
-
-        <div class="pages">  
-        <div class="page leftpage">
-                Add a bribe
-                <!-- TODO : Form -->
-            </div>
-
-            <div class="page rightpage">
-                <!-- TODO : Display bribes and total paiement -->
-            </div>  
-    </section>
+$query = "SELECT firstname, payment FROM bribe ORDER BY firstname ASC";
+$result = $conn->query($query);
+?>
+<table padding="1" cellpadding="10" cellspacing="0">
+<?php
+$sn=1;
+while($data = $result->fetch(PDO::FETCH_ASSOC)) {
   
+  ?>
+   <tr>
+  <td><?php echo $sn; ?> </td>
+  <td><?php echo $data['firstname']; ?> </td>
+  <td><?php echo $data['payment']; ?> </td>
+   </tr>
+   <?php
+ }
+ ?>
+</table>
+ <?php
+} catch(PDOException $e) {
+ echo "Error: " . $e->getMessage();
+}
+
+$statement = $connection->query('SELECT SUM(payement) AS total_payement FROM bribe');
+$total_payement = $statement->fetch(PDO::FETCH_ASSOC);
+
+?>
+</section>
+<section>
+<h1 class="title">Payment</h1>
+        
+            <form class="contact" action="payment.php" method="post">
+                    <label for="lastname">Firstname*</label>
+                    <input class="background-secondary-color" type="text" name="lastname" id="lastname" pattern="([a-zA-Z0-9_\s]+)" required>
+
+                    <label for="firstname">Payment*</label>
+                    <input class="background-secondary-color" type="integer" name="firstname" id="firstname" pattern="([a-zA-Z0-9_\s]+)" required>
+                    <input class="submit" type="submit" value="confirmer">
+
+
+            </form>
+        
+    </section>  
+
+
+
+
+
 
 
 </main>

@@ -1,0 +1,27 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin: auto 25%;
+}
+
+input {
+    margin-bottom: 10px;
+    height: 5vh;
+}
+.background-secondary-color{
+    background-color: lightgrey;
+}
+
+label {
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.submit{
+    color: white;
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 5vh;
+    width: 15vh;
+}
